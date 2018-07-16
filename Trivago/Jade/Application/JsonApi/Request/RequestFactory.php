@@ -456,7 +456,7 @@ class RequestFactory
             }
             $ids = [];
             foreach ($rawRelationship as $key => $singleRelationship) {
-                $this->validateKeys('data.relationships.'.$relationshipName.'.data[]', $singleRelationship, ['id', 'type']);
+                $this->validateKeys('data.relationships.'.$relationshipName.'.data['.$key.']', $singleRelationship, ['id', 'type']);
                 $this->validateRelationshipType(
                     $singleRelationship,
                     $relationshipName,
